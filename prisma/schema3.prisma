@@ -1,0 +1,19 @@
+generator client3 {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma-serie"
+}
+
+datasource db3 {
+  provider = "postgresql"
+  url      = env("DATABASE_URL3")
+}
+
+model Serie {
+  id          Int      @id @default(autoincrement())
+  id_content  Int      @unique 
+  genre       String
+  duration    Int
+  date        DateTime
+  actors      String
+  producer    String
+}
