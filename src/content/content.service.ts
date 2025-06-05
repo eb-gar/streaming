@@ -117,4 +117,23 @@ export class ContentService {
 
     return content;
   }
+
+  async delete(id: number) {
+  const content = await this.prismaContent.content.findUnique({ where: { id } });
+
+  if (!content) {
+    throw new Error('Content not found');
+  }
+
+  if (content.type === 'movie') {
+    await this.prismaMovie.movie.deleteMany({ where: { id_content: id } });
+  } else if (content.type === 'serie') {
+    await this.prismaSerie.serie.deleteMany({ where: { id_content: id } });
+  }
+
+  await this.prismaContent.content.delete({ where: { id } });
+
+  return { message: `Content with ID ${id} deleted successfully.` };
+}
+
 }
