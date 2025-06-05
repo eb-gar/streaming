@@ -8,7 +8,7 @@
 DROP TABLE "content";
 
 -- CreateTable
-CREATE TABLE "pelicula" (
+CREATE TABLE "movie" (
     "id" SERIAL NOT NULL,
     "id_content" INTEGER NOT NULL,
     "genre" TEXT NOT NULL,
@@ -17,8 +17,8 @@ CREATE TABLE "pelicula" (
     "actors" TEXT NOT NULL,
     "producer" TEXT NOT NULL,
 
-    CONSTRAINT "pelicula_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "movie_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex
-CREATE UNIQUE INDEX "pelicula_id_content_key" ON "pelicula"("id_content");
+CREATE UNIQUE INDEX "movie_id_content_key" ON "movie"("id_content");

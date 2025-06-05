@@ -1,11 +1,11 @@
 /*
   Warnings:
 
-  - You are about to drop the `pelicula` table. If the table is not empty, all the data it contains will be lost.
+  - You are about to drop the `movie` table. If the table is not empty, all the data it contains will be lost.
 
 */
 -- DropTable
-DROP TABLE "pelicula";
+DROP TABLE "movie";
 
 -- CreateTable
 CREATE TABLE "Serie" (
